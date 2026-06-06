@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: oklch(0.98 0.01 60); /* Warm Cream */
+  --color-foreground: oklch(0.15 0.01 240); /* Dark Charcoal */
+
+  --color-card: oklch(1 0 0);
+  --color-card-foreground: oklch(0.15 0.01 240);
+
+  --color-popover: oklch(1 0 0);
+  --color-popover-foreground: oklch(0.15 0.01 240);
+
+  --color-primary: #FF5E1E; /* Smart Orange */
+  --color-primary-foreground: oklch(1 0 0);
+
+  --color-secondary: oklch(0.96 0.01 240);
+  --color-secondary-foreground: oklch(0.2 0.01 240);
+
+  --color-muted: oklch(0.96 0.01 240);
+  --color-muted-foreground: oklch(0.5 0.01 240);
+
+  --color-accent: #FF5E1E;
+  --color-accent-foreground: oklch(1 0 0);
+
+  --color-destructive: oklch(0.6 0.2 20);
+  --color-destructive-foreground: oklch(1 0 0);
+
+  --color-border: oklch(0.9 0.01 240);
+  --color-input: oklch(0.9 0.01 240);
+  --color-ring: #FF5E1E;
+
+  --radius-lg: 1rem;
+  --radius-md: calc(1rem - 2px);
+  --radius-sm: calc(1rem - 4px);
+
+  /* SmartMeal AI Custom Colors */
+  --color-smartOrange: #FF5E1E;
+  --color-warmCream: #FDF8F5;
+  --color-softWhite: #FFFFFF;
+  --color-darkCharcoal: #1C1C1E;
+  --color-nutritionGreen: #4CAF50;
+  --color-aiBlue: #2196F3;
+  --color-successGreen: #34C759;
+
+  --font-sans: var(--font-sans);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+}
+
+@layer utilities {
+  .glass {
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+}
