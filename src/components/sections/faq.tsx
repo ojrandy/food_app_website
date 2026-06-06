@@ -21,7 +21,7 @@ export function FAQ() {
           />
           
           <div className="max-w-3xl mx-auto bg-background rounded-2xl p-6 md:p-8 border border-border/50 shadow-sm">
-            <Accordion type="single" collapsible className="w-full">
+            <Accordion className="w-full">
               {FAQS.map((faq) => (
                 <AccordionItem key={faq.id} value={faq.id}>
                   <AccordionTrigger className="text-left font-medium text-lg">

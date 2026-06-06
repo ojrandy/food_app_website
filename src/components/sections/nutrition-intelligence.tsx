@@ -17,22 +17,22 @@ export function NutritionIntelligence() {
                 Because the AI generates your meals, it already knows exactly what you are eating. No more searching databases or scanning barcodes. Your daily macros are tracked automatically with 100% precision.
               </p>
               
-              <ul className="space-y-4">
+              <div className="space-y-4">
                 {[
                   { icon: PieChart, text: "Perfectly balanced Protein, Carbs, and Fats." },
                   { icon: Zap, text: "Dynamic caloric adjustments based on weekly weigh-ins." },
                   { icon: ActivitySquare, text: "Micronutrient deficiency warnings." }
                 ].map((item, i) => (
-                  <SlideUp key={i} delay={i * 0.1} asChild>
-                    <li className="flex items-center gap-3">
+                  <SlideUp key={i} delay={i * 0.1}>
+                    <div className="flex items-center gap-3">
                       <div className="flex-shrink-0 w-8 h-8 rounded-full bg-smartOrange/10 flex items-center justify-center text-smartOrange">
                         <item.icon className="w-4 h-4" />
                       </div>
                       <span className="font-medium">{item.text}</span>
-                    </li>
+                    </div>
                   </SlideUp>
                 ))}
-              </ul>
+              </div>
             </Stack>
           </div>
 

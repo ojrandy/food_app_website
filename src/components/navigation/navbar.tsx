@@ -8,7 +8,6 @@ import { cn } from "@/lib/utils";
 
 import { DesktopNav } from "./desktop-nav";
 import { MegaMenu } from "./mega-menu";
-import { SearchPlaceholder } from "./search-placeholder";
 
 // Lazy load mobile nav to save JS bundle size on desktop
 const MobileNav = dynamic(() => import("./mobile-nav"), {
@@ -60,17 +59,16 @@ export function Navbar() {
         />
 
         {/* Desktop Actions */}
-        <div className="hidden md:flex items-center gap-4 relative z-50">
-          <SearchPlaceholder />
+        <div className="hidden md:flex items-center gap-6 relative z-50">
           <Link
             href="/login"
-            className="text-sm font-medium hover:text-smartOrange transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-smartOrange rounded px-2 py-1"
+            className="text-sm font-semibold text-foreground hover:text-smartOrange transition-colors focus:outline-none"
           >
             Sign In
           </Link>
           <Link
             href="/#get-started"
-            className="bg-smartOrange text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-smartOrange/90 transition-all shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-smartOrange"
+            className="bg-smartOrange text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-smartOrange-dark transition-all shadow-md hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-smartOrange"
           >
             Get Started
           </Link>

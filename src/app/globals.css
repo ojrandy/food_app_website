@@ -34,13 +34,21 @@
   --radius-sm: calc(1rem - 4px);
 
   /* SmartMeal AI Custom Colors */
-  --color-smartOrange: #FF5E1E;
-  --color-warmCream: #FDF8F5;
+  --color-smartOrange: #F97316;
+  --color-smartOrange-light: #FB923C;
+  --color-smartOrange-dark: #EA580C;
+  --color-warmCream: #FAFAFA;
   --color-softWhite: #FFFFFF;
-  --color-darkCharcoal: #1C1C1E;
-  --color-nutritionGreen: #4CAF50;
-  --color-aiBlue: #2196F3;
-  --color-successGreen: #34C759;
+  --color-darkCharcoal: #0F172A;
+  --color-nutritionGreen: #22C55E;
+  --color-successGreen: #10B981;
+  --color-alertRed: #EF4444;
+  /* Responsive Foundation */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
 
   --font-sans: var(--font-sans);
 }
@@ -48,6 +56,9 @@
 @layer base {
   * {
     border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
   }
   body {
     background-color: var(--color-background);
@@ -60,5 +71,27 @@
     background-color: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  /* Accessibility Foundation */
+  .focus-ring {
+    outline: 2px solid var(--color-smartOrange);
+    outline-offset: 2px;
+  }
+
+  /* Animation Foundation */
+  .animate-accordion-down {
+    animation: accordion-down 0.2s ease-out;
+  }
+  .animate-accordion-up {
+    animation: accordion-up 0.2s ease-out;
+  }
+  @keyframes accordion-down {
+    from { height: 0; }
+    to { height: var(--radix-accordion-content-height, var(--accordion-panel-height, auto)); }
+  }
+  @keyframes accordion-up {
+    from { height: var(--radix-accordion-content-height, var(--accordion-panel-height, auto)); }
+    to { height: 0; }
   }
 }
