@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { motion, HTMLMotionProps, useReducedMotion } from "framer-motion";
+import { m, HTMLMotionProps, useReducedMotion } from "framer-motion";
 import { animations } from "@/constants/animations";
 
 type BaseAnimationProps = HTMLMotionProps<"div"> & {
@@ -15,7 +15,7 @@ export function FadeIn({ children, delay = 0, duration = animations.durations.no
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once, margin: "-10%" }}
@@ -27,7 +27,7 @@ export function FadeIn({ children, delay = 0, duration = animations.durations.no
       {...props}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -35,7 +35,7 @@ export function SlideUp({ children, delay = 0, duration = animations.durations.n
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once, margin: "-10%" }}
@@ -47,7 +47,7 @@ export function SlideUp({ children, delay = 0, duration = animations.durations.n
       {...props}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -55,7 +55,7 @@ export function SlideDown({ children, delay = 0, duration = animations.durations
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, y: shouldReduceMotion ? 0 : -20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once, margin: "-10%" }}
@@ -67,7 +67,7 @@ export function SlideDown({ children, delay = 0, duration = animations.durations
       {...props}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -75,7 +75,7 @@ export function SlideLeft({ children, delay = 0, duration = animations.durations
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, x: shouldReduceMotion ? 0 : 20 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once, margin: "-10%" }}
@@ -87,7 +87,7 @@ export function SlideLeft({ children, delay = 0, duration = animations.durations
       {...props}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -95,7 +95,7 @@ export function SlideRight({ children, delay = 0, duration = animations.duration
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, x: shouldReduceMotion ? 0 : -20 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once, margin: "-10%" }}
@@ -107,7 +107,7 @@ export function SlideRight({ children, delay = 0, duration = animations.duration
       {...props}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -115,7 +115,7 @@ export function ScaleIn({ children, delay = 0, duration = animations.durations.n
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, scale: shouldReduceMotion ? 1 : 0.95 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once, margin: "-10%" }}
@@ -127,7 +127,7 @@ export function ScaleIn({ children, delay = 0, duration = animations.durations.n
       {...props}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -159,7 +159,7 @@ export function StaggerContainer({
   };
 
   return (
-    <motion.div
+    <m.div
       variants={containerVariants}
       initial="hidden"
       whileInView="show"
@@ -167,7 +167,7 @@ export function StaggerContainer({
       {...props}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -186,8 +186,8 @@ export function StaggerItem({ children, ...props }: HTMLMotionProps<"div">) {
   };
 
   return (
-    <motion.div variants={itemVariants} {...props}>
+    <m.div variants={itemVariants} {...props}>
       {children}
-    </motion.div>
+    </m.div>
   );
 }

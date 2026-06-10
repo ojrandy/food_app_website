@@ -30,7 +30,7 @@ const nextConfig: NextConfig = {
           // Note: Full CSP is usually applied via middleware for nonces, but can be added here
           {
             key: "Content-Security-Policy",
-            value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data: https://images.unsplash.com; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests;"
+            value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data: https://images.unsplash.com https://i.pravatar.cc https://api.qrserver.com; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests;"
           }
         ],
       },
@@ -52,6 +52,18 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "res.cloudinary.com",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "i.pravatar.cc",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "api.qrserver.com",
         port: "",
         pathname: "/**",
       },
